@@ -44,3 +44,52 @@ a:hover, a:link {
 	text-decoration: none;
 }
 
+media all and (max-width: 480px){
+	.wrapper {
+		width: 100%; 
+	}
+
+	.block{
+		float: none;
+		width: 100%;
+		border-bottom: 2px solid grey
+	}
+
+	.block:last-child {
+		border-bottom: none;
+	}
+}
+
+
+@media all and (min-width: 481px) and (max-width: 991px) {
+	.wrapper {
+		width: 100%; 
+	}
+
+	.block{
+		float: left;
+		width: 33%;
+		border-right: 1px solid grey;
+	}
+
+	.block:last-child {
+		border-right: none;
+	}
+}
+
+@media all and (min-width: 992px){
+	.wrapper {
+		width: 100%; 
+	}
+
+	.block {
+		float: left;
+		width: 33%;
+		border-right: 1px solid grey;
+	}
+
+	.block:last-child {
+		border-right: none;
+	}
+}
+
