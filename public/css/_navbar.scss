@@ -13,7 +13,7 @@ ul {
     top: 0;
 }
 
-#block {
+.block {
 	width: 33.33%;
 	float: left;
 }
@@ -37,7 +37,6 @@ a {
 .block:last-child {
     border-right: none;
 }
-
 
 a:hover, a:link {
 	color: grey;
@@ -69,7 +68,7 @@ a:hover, a:link {
 	.block{
 		float: left;
 		width: 33%;
-		border-right: 1px solid grey;
+		border-right: 2px solid grey;
 	}
 
 	.block:last-child {
@@ -85,7 +84,7 @@ a:hover, a:link {
 	.block {
 		float: left;
 		width: 33%;
-		border-right: 1px solid grey;
+		border-right: 2px solid grey;
 	}
 
 	.block:last-child {
