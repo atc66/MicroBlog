@@ -9,6 +9,16 @@ get '/' do
 	erb :index
 end
 
+get '/blogs' do
+	@blogs = Blog.all
+		
+	erb :"/blogs/blogs"
+end
+
+get '/blogs/:id' do
+	@blog = Blog.find(params[:id])
+	erb :"blogs/blog"
+	end
 get '/users' do
 
 	erb :users
