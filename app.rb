@@ -12,6 +12,27 @@ get '/' do
 	erb :index
 end
 
+post '/login' do
+	@username = params[:username]
+	@password = params[:password]
+	 
+	if 
+	user = User.where(username: @username, password: @password).first
+		session[:user_id] = user.id
+		# user.username == params[:username]
+		redirect "/current/#{user.id}"
+	else
+		redirect '/'
+	end
+ end
+
+
+get '/current/:id' do
+	 @user = User.find(session[:user_id])
+	erb :'users/current'
+end
+
+
 get '/blogs' do
 	@blogs = Blog.all
 	erb :"/blogs/blogs"
@@ -22,12 +43,7 @@ get '/blogs/:id' do
 	erb :"blogs/blog"
 	end
 
-get '/current' do
-	
 
-
-	erb :'users/current'
-end
 
 get '/edit' do
 

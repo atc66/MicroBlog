@@ -1,14 +1,14 @@
 <body>
 <p id='header'>Please Login</p>
 
-<form action="/" method="post">
-	<input type="text" placeholder="username">
-	<input type="text" placeholder="password">
+<form action="/login" method="post">
+	<input type="text" name='username' placeholder="username">
+	<input type="text" name='password' placeholder="password">
 	<input type="submit" value="login">
 </form>
 
-<hr>
 
+<a href='/signup'><h1>Sign Up</h1></a>
 <hr>
 <% @blogs_reverse.each_with_index do |b,i| %>
 	<a href='blogs/<%= b.id %>'><div><%= b.title %></div></a>
