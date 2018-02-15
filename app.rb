@@ -44,6 +44,12 @@ Blog.create(title: params[:title], content: params[:content], userid: 1)
 redirect "/current"
 end
 
+post '/deleteBlog/:id' do
+	@blog = Blog.find(params[:id])
+	@blog.destroy
+redirect '/current'
+end
+
 
 
 
