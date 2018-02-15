@@ -1,23 +1,22 @@
 <body>
 
-
-
 <p id='header'>Current User</p>
 <a href='/current/<%= @user.id %>/edit'>
 <%=@user.username%>
 </a>
 
+<div>
+  <form method="POST" action="/createBlog">
+    <input type="text" name="title" placeholder="Title">
+    <textarea name="content" maxlength="150"></textarea>
+    <input type="submit" value="Post">
+  </form>
+<div>
 
 
-
-
-
-
-
-
-
-
-
-
-
+<% @blogs.reverse.each do |b| %>
+    <a href='blogs/<%= b.id %>'><div><%= b.title %></div></a>
+        <div><%= b.content %></div>
+<% end %>
+  
 </body>

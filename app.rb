@@ -29,7 +29,8 @@ post '/login' do
 
 get '/current/:id' do
 	 @user = User.find(session[:user_id])
-	erb :'users/current'
+  @blogs = Blog.where(userid: session[:user_id])
+	erb :'/Users/current'
 end
 
 
@@ -43,8 +44,6 @@ get '/blogs/:id' do
 	erb :"blogs/blog"
 	end
 
-
-
 get '/edit' do
 
 	erb :'users/edit'
@@ -55,21 +54,13 @@ get '/signup' do
 	erb :'users/signup'
 end
 
+post '/createBlog' do
+Blog.create(title: params[:title], content: params[:content], userid: 1)
+redirect "/current"
+end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+post '/deleteBlog/:id' do
+	@blog = Blog.find(params[:id])
+	@blog.destroy
+redirect '/current'
+end
