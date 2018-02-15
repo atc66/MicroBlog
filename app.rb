@@ -8,6 +8,7 @@ require './models'
 
 get '/' do 
 	@blogs = Blog.all
+	@blogs_reverse = @blogs.reverse
 	erb :index
 end
 
