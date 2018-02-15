@@ -16,7 +16,10 @@
 	<input type="submit" value="submit">
 </form>
 <hr>
-<% @blogs_reverse.each do |b| %>
-    <a href='blogs/<%= b.id %>'><div><%= b.title %></div></a>
+<% @blogs_reverse.each_with_index do |b,i| %>
+	<a href='blogs/<%= b.id %>'><div><%= b.title %></div></a>
+	<% break if i >= 9  %>
+
 <% end %>
 </body>
+
