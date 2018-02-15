@@ -1,3 +1,15 @@
-body {
-	background-color: blue;
+*{
+	margin: 0 auto;
+}
+
+html { 
+    background: url(../img/clouds.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+form {
+	margin: 10px 5px;
 }
