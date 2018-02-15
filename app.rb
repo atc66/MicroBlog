@@ -23,7 +23,6 @@ get '/blogs/:id' do
 	end
 
 get '/current' do
-	session[:user_id] = 1
 	@blogs = Blog.where(userid: session[:user_id])
 
 	erb :'/Users/current'
@@ -49,21 +48,3 @@ post '/deleteBlog/:id' do
 	@blog.destroy
 redirect '/current'
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
