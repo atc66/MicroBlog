@@ -21,8 +21,39 @@ get '/blogs/:id' do
 	@blog = Blog.find(params[:id])
 	erb :"blogs/blog"
 	end
-get '/users' do
 
-	erb :users
+get '/current' do
+	
+
+
+	erb :'users/current'
 end
+
+get '/edit' do
+
+	erb :'users/edit'
+end
+
+get '/signup' do
+
+	erb :'users/signup'
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
