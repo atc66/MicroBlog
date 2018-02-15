@@ -1,8 +1,13 @@
 <body>
+  
+<p id='header'><%= @blog.title%></p>
+<p><%= @blog.content%></p>
+
 <h3><%= @blog.title%></h3>
 <h3><%= @blog.content%></h3>
 
 <form method="POST" action="/deleteBlog/<%= @blog.id %>">
-<input type="submit" value="Delete">
+  <input type="submit" value="Delete">
 </form>
+
 </body>
