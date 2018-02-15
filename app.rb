@@ -23,10 +23,10 @@ get '/blogs/:id' do
 	end
 
 get '/current' do
-	
+	session[:user_id] = 1
+	@blogs = Blog.where(userid: session[:user_id])
 
-
-	erb :'users/current'
+	erb :'/Users/current'
 end
 
 get '/edit' do
@@ -39,6 +39,10 @@ get '/signup' do
 	erb :'users/signup'
 end
 
+post '/createBlog' do
+Blog.create(title: params[:title], content: params[:content], userid: 1)
+redirect "/current"
+end
 
 
 
