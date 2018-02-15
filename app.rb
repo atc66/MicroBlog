@@ -55,12 +55,14 @@ get '/signup' do
 end
 
 post '/createBlog' do
-Blog.create(title: params[:title], content: params[:content], userid: 1)
-redirect "/current"
+	@user = User.find(session[:user_id])
+Blog.create(title: params[:title], content: params[:content], userid: session[:user_id])
+redirect "/current/#{@user.id}"
 end
 
 post '/deleteBlog/:id' do
+	@user = User.find(session[:user_id])
 	@blog = Blog.find(params[:id])
 	@blog.destroy
-redirect '/current'
+	redirect "/current/#{@user.id}"
 end
