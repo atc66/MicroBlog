@@ -46,12 +46,12 @@ get '/blogs/:id' do
 
 get '/edit' do
 
-	erb :'users/edit'
+	erb :'Users/edit'
 end
 
 get '/signup' do
 
-	erb :'users/signup'
+	erb :'Users/signup'
 end
 
 post '/createBlog' do
