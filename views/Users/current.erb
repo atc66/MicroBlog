@@ -1,44 +1,47 @@
 <body>
 
-<p id='header'>Current User</p>
+  <div id='box1'>
+    <p id='header'>Current User</p>
+  	<a href='/current/<%= @user.id %>/edit'>
+  		<p id='header'>
+  			<%=@user.username%>
+  		</p> 	
+  	</a>
+  </div>
 
-<div>
-	<a href='/current/<%= @user.id %>/edit'>
-		<p id='header'>
-			<%=@user.username%>
-		</p> 	
-	</a>
-</div>
+  <br>
 
-<div>
-  <form method="POST" action="/createBlog">
-    <input type="text" name="title" placeholder="Title">
-    <textarea name="content" maxlength="150"></textarea>
-    <input type="submit" value="Post">
-  </form>
-<div>
+  <div id='box1'>
+    <p id='header'>Make a Post</p>
+    <form method="POST" action="/createBlog">
+      <input type="text" name="title" placeholder="Title">
+      <br>
+      <textarea name="content" maxlength="150"></textarea>
+      <br>
+      <input type="submit" value="Post">
+    </form>
+  </div>
+  <br>
 
-
-<% @blogs.reverse.each do |b| %>
-
-    <div>
-    	<a href='/blogs/<%= b.id %>'>
-    		<p id='header'>
-    			<%= b.title %>
+  <% @blogs.reverse.each do |b| %>
+    <div id='box1'>
+      <a href='/blogs/<%= b.id %>'>
+        <p id='header'>
+        	<%= b.title %>
+        </p>
+        <p id='content'>
+    			<%= b.content %>
     		</p>
-		</a>
-    </div>
-   		
-	<div>
-    	<p id='content'>
-			<%= b.content %>
-		</p>
-	</div>
-<% end %>
+      </a>
+  	</div>
+    <br>
+  <% end %>
+
   <hr>
-  <hp id='header'>Logout</p>
-<form action='/logout' method='post'>
-	<input type="submit" value="Logout">
-</form>
+
+  <p id='header'>Logout</p>
+  <form action='/logout' method='post'>
+  	<input type="submit" value="Logout">
+  </form>
 
 </body>

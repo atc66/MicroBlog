@@ -2,7 +2,6 @@
 
 	<div id='box1'>
 		<p id='header'>Please Login</p>
-
 		<form action="/login" method="post">
 			<input type="text" name='username' placeholder="username">
 			<input type="text" name='password' placeholder="password">
@@ -13,12 +12,13 @@
 	<br>
 
 	<div id='box1'>
-		<a href='/signup'><p id='header'>Sign Up</p></a>
-		
+		<a href='/signup'>
+			<p id='header'>Sign Up</p>
+		</a>
 	</div>
 
-
 	<p id='header'>The Newest</p>
+
 	<% @blogs_reverse.each_with_index do |b,i| %>
 		<div id='box1'>
 			<a href='blogs/<%= b.id %>'>
@@ -27,7 +27,6 @@
 				</p> 
 			</a>
 			<% break if i >= 9  %>
-			
 		</div>
 		<br>
 	<% end %>
