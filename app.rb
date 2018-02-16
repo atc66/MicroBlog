@@ -69,7 +69,6 @@ end
 
 post '/new_user' do
 	User.create(username: params[:username], password: params[:password])
-	
 	redirect "/"
  end
 
@@ -110,4 +109,10 @@ end
 get '/blogs/update/:id' do
 	@blog = Blog.find(params[:id])
 erb :"blogs/updateBlog"
+end
+
+post '/updateBlog/:id' do
+	@blog = Blog.find(params[:id])
+	@blog.update(title: params[:title], content: params[:content], userid: session[:user_id])
+	redirect "/current/#{session[:user_id]}"
 end

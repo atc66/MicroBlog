@@ -1,7 +1,8 @@
-class User<ActiveRecord::Base
-	has_many :blogs
+
+class User < ActiveRecord::Base
+	has_many :blogs, dependent: :destroy
 end
 
-class Blog<ActiveRecord::Base
+class Blog < ActiveRecord::Base
 	belongs_to :user
 	end
