@@ -64,9 +64,8 @@ get '/signup' do
 end
 
 post '/new_user' do
-	user = User.create(username: params[:username], password: params[:password])
-	session[:user_id]=user.id
-	redirect "/blogs"
+	User.create(username: params[:username], password: params[:password])
+	redirect "/"
  end
 
  post 'update' do
