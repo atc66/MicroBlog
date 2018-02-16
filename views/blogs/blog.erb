@@ -2,7 +2,7 @@
   
 <p id='header'><%= @blog.title%></p>
 <p><%= @blog.content%></p>
-<%= @blog.userid %>
+
 <% if @user != nil %>
   <% if @blog.userid == @user.id %>
     <form method="POST" action="/deleteBlog/<%= @blog.id %>">
