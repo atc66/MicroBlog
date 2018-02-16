@@ -1,5 +1,5 @@
 class User<ActiveRecord::Base
-	has_many :blogs, dependent: :destroy
+	has_many :blogs
 end
 
 class Blog<ActiveRecord::Base
