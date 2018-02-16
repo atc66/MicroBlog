@@ -72,8 +72,13 @@ post '/deleteBlog/:id' do
 	redirect "/current/#{@user.id}"
 end
 
-get '/updateBlog/:id' do
+get '/update_Blog/:id' do
 	@user = User.find(session[:user_id])
 	@blog = Blog.find(params[:id])
-	redirect "/blogs#{@user.id}"
+	redirect "/blogs/update/#{@blog.id}"
+end
+
+get '/blogs/update/:id' do
+	@blog = Blog.find(params[:id])
+erb :"blogs/updateBlog"
 end
