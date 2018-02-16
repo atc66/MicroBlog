@@ -40,7 +40,7 @@ end
 get '/current/:id/edit' do
 		@user = User.find(params[:id])
 
-		erb :'users/edit'
+		erb :'Users/edit'
 	end
 
 get '/blogs' do
@@ -79,7 +79,7 @@ post '/new_user' do
  	redirect "/"
  end
 
- post '/delete_user/:id' do
+ post '/delete_user/current/:id' do
  	user = User.find(params[:id])
  
  	user.destroy

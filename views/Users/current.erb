@@ -46,7 +46,7 @@
 
 <hr>
 <p id='header'>Delete</p>
-<form action='/delete_user/current' method='post'>
+<form action='/delete_user/<%= @user.id %>' method='post'>
   <input type="submit" value="Delete User">
 
 
