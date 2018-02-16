@@ -113,6 +113,6 @@ end
 
 post '/updateBlog/:id' do
 	@blog = Blog.find(params[:id])
-	@blog.update(title: params[:title], content: params[:content], userid: session[:user_id])
+	@blog.update(title: params[:title], content: params[:content], user_id: session[:user_id])
 	redirect "/current/#{session[:user_id]}"
 end
