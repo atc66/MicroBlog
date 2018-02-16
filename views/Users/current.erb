@@ -20,6 +20,7 @@
 
 
 <% @blogs.reverse.each do |b| %>
+
     <div>
     	<a href='blogs/<%= b.id %>'>
     		<p id='header'>
@@ -34,5 +35,10 @@
 		</p>
 	</div>
 <% end %>
-  
+  <hr>
+  <hp id='header'>Logout</p>
+<form action='/logout' method='post'>
+	<input type="submit" value="Logout">
+</form>
+
 </body>
