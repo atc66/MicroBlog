@@ -2,13 +2,15 @@
 <body>
   
 <% @blogs.each do |b| %>
-   <div>
+	<br>
+   <div id='box1'>
     	<a href='blogs/<%= b.id %>'>
     		<p id='header'>
     			<%= b.title %>
     		</p> 
     	</a>
-    </div>	
+    </div>
+    <br>	
 <% end %>
 
 </body>

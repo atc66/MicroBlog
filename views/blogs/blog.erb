@@ -1,17 +1,22 @@
 <body>
-  
-<p id='header'><%= @blog.title%></p>
 
-<p id='content'><%= @blog.content%></p>
+<div id='box1'>  
+	<p id='header'><%= @blog.title%></p>
+
+	<p id='content'><%= @blog.content%></p>
+</div>
 
 <% if @user != nil %>
   <% if @blog.userid == @user.id %>
+
     <form method="POST" action="/deleteBlog/<%= @blog.id %>">
       <input type="submit" value="Delete">
     </form>
+
     <form method="GET" action="/update_Blog/<%= @blog.id %>">
       <input type="submit" value="Update">
     </form>
+
     <% end %>
 <% end %>
 
