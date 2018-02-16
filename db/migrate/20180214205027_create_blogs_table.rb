@@ -3,7 +3,8 @@ class CreateBlogsTable < ActiveRecord::Migration[5.1]
   	create_table :blogs do |t|
   		t.string :title
   		t.string :content
-  		t.integer :userid
+  		t.integer :user_id
   	end
   end
 end
+
