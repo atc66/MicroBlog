@@ -1,39 +1,43 @@
 <body>
 
-<div id='box'>
-	<p id='header'>Please Login</p>
+	<div id='box1'>
+		<p id='header'>Please Login</p>
 
-	<form action="/login" method="post">
-		<input type="text" name='username' placeholder="username">
-		<input type="text" name='password' placeholder="password">
-		<input type="submit" value="login">
-	</form>
-</div>	
+		<form action="/login" method="post">
+			<input type="text" name='username' placeholder="username">
+			<input type="text" name='password' placeholder="password">
+			<input type="submit" value="login">
+		</form>
+	</div>	
 
-<hr>
+	<br>
 
-<p id='header'>
-	<a href='/signup'>Sign Up</a>
-</p>
+	<div id='box1'>
+		<a href='/signup'><p id='header'>Sign Up</p></a>
+		
+	</div>
 
-<hr>
 
-<p id='header'>The Newest</p>
+	<p id='header'>The Newest</p>
+	<% @blogs_reverse.each_with_index do |b,i| %>
+		<div id='box1'>
+			<a href='blogs/<%= b.id %>'>
+				<p id='header'>
+					<%= b.title %>
+				</p> 
+			</a>
+			<% break if i >= 9  %>
+			
+		</div>
+		<br>
+	<% end %>
+	
+	
+<!-- 	<div id='logout'>
+		<p>Logout</p>
+		<form action='/logout' method='post'>
+			<input type="submit" value="Logout">
+		</form>
+	</div> -->
 
-<% @blogs_reverse.each_with_index do |b,i| %>
-<div>
-	<a href='blogs/<%= b.id %>'>
-		<p id='header'>
-			<%= b.title %>
-		</p> 
-	</a>
-	<% break if i >= 9  %>
-</div>
-
-<% end %>
-<hr>
-  <hp id='header'>Logout</p>
-<form action='/logout' method='post'>
-	<input type="submit" value="Logout">
-</form>
 </body>

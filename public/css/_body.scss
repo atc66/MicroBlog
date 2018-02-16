@@ -15,8 +15,13 @@ form {
 }
 
 
-#box {
-	height: 220px;
+#box1 {
+	height: 200px;
 	width: 300px;
-	border: 2px solid yellow
+	background-color: rgba(128,128,128, 0.5);
+	border: 10px solid rgba(57, 135, 201, 0.5);
 }
+
+// #logout {
+// 	margin-top: 10000px;
+// }
