@@ -41,6 +41,7 @@ end
 
 get '/blogs/:id' do
 	@blog = Blog.find(params[:id])
+	@user = User.find(session[:user_id])
 	erb :"blogs/blog"
 	end
 

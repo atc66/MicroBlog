@@ -2,9 +2,12 @@
   
 <p id='header'><%= @blog.title%></p>
 <p><%= @blog.content%></p>
-
-<form method="POST" action="/deleteBlog/<%= @blog.id %>">
-  <input type="submit" value="Delete">
-</form>
+<%= @blog.userid %>
+<%= @user.id %>
+<% if @blog.userid == @user.id %>
+  <form method="POST" action="/deleteBlog/<%= @blog.id %>">
+    <input type="submit" value="Delete">
+  </form>
+  <% end %>
 
 </body>
