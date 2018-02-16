@@ -50,7 +50,7 @@ end
 
 get '/blogs/:id' do
 	@blog = Blog.find(params[:id])
-	if session[:userid]
+	if session[:user_id]
 		@user = User.find(session[:user_id])
 	else
 		@user = nil
