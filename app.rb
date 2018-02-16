@@ -33,6 +33,11 @@ get '/current/:id' do
 	erb :'/Users/current'
 end
 
+get '/current/:id/edit' do
+		@user = User.find(params[:id])
+
+		erb :'users/edit'
+	end
 
 get '/blogs' do
 	@blogs = Blog.all
@@ -51,8 +56,22 @@ end
 
 get '/signup' do
 
+
 	erb :'users/signup'
 end
+
+post '/new_user' do
+	user = User.create(username: params[:username], password: params[:password])
+	session[:user_id]=user.id
+	redirect "/blogs"
+ end
+
+ post 'update' do
+ 	@user= User.find(session [:user_id])
+ 	@user.update(username: params[:username], password: params[:password])
+ 	redirect '/current'
+ end
+
 
 post '/createBlog' do
 Blog.create(title: params[:title], content: params[:content], userid: 1)
