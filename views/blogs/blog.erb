@@ -1,7 +1,8 @@
 <body>
   
 <p id='header'><%= @blog.title%></p>
-<p><%= @blog.content%></p>
+
+<p id='content'><%= @blog.content%></p>
 
 <% if @user != nil %>
   <% if @blog.userid == @user.id %>
@@ -13,5 +14,6 @@
     </form>
     <% end %>
 <% end %>
+
 
 </body>
