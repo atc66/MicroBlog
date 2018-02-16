@@ -25,6 +25,10 @@ post '/login' do
 		redirect '/'
 	end
  end
+post '/logout' do
+
+	redirect '/'
+end
 
 
 get '/current/:id' do
@@ -46,7 +50,7 @@ end
 
 get '/blogs/:id' do
 	@blog = Blog.find(params[:id])
-	if session[:user_id]
+	if session[:userid]
 		@user = User.find(session[:user_id])
 	else
 		@user = nil
@@ -68,12 +72,20 @@ post '/new_user' do
 	redirect "/"
  end
 
- post 'update' do
- 	@user= User.find(session [:user_id])
- 	@user.update(username: params[:username], password: params[:password])
- 	redirect '/current'
+ post 'update_user/:id/edit' do
+ 	
+ 	User.update(username: params[:username], password: params[:password])
+ 	
+ 	redirect "/"
  end
 
+ post '/delete_user/:id' do
+ 	user = User.find(params[:id])
+ 
+ 	user.destroy
+ 	
+ 	redirect "/"
+end
 
 post '/createBlog' do
 	@user = User.find(session[:user_id])

@@ -1,10 +1,10 @@
 <body>
 <p id='header'>Update Account</p>
 
-<form action='/update_user' method='post'>
+<form action='/update_user/<%=@user.id %>' method='post'>
 	<input type="text" name="username" placeholder='username'>
 	<input type="text" name="password" placeholder='password'>
-	<input type="submit" value="Update user">
+	<input type="submit" value="Update User">
 </form>
 
 <p id='header'>Logout</p>
@@ -15,10 +15,6 @@
 
 <hr>
 
-<p id='header'>Delete User</p>
 
-<form action='/delete_user' method='post'>
-	<input type="submit" value="Delete Account">
-</form>
 
 </body>
