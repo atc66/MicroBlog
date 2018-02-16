@@ -29,7 +29,7 @@ post '/login' do
 
 get '/current/:id' do
 	 @user = User.find(session[:user_id])
-  @blogs = Blog.where(userid: session[:user_id])
+  @blogs = Blog.where(user_id: session[:user_id])
 	erb :'/Users/current'
 end
 
@@ -77,7 +77,7 @@ post '/new_user' do
 
 post '/createBlog' do
 	@user = User.find(session[:user_id])
-Blog.create(title: params[:title], content: params[:content], userid: session[:user_id])
+Blog.create(title: params[:title], content: params[:content], user_id: session[:user_id])
 redirect "/current/#{@user.id}"
 end
 
@@ -101,6 +101,6 @@ end
 
 post '/updateBlog/:id' do
 	@blog = Blog.find(params[:id])
-	@blog.update(title: params[:title], content: params[:content], userid: session[:user_id])
+	@blog.update(title: params[:title], content: params[:content], user_id: session[:user_id])
 	redirect "/current/#{session[:user_id]}"
 end
