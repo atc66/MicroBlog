@@ -3,11 +3,15 @@
 <p id='header'><%= @blog.title%></p>
 <p><%= @blog.content%></p>
 <%= @blog.userid %>
-<%= @user.id %>
-<% if @blog.userid == @user.id %>
-  <form method="POST" action="/deleteBlog/<%= @blog.id %>">
-    <input type="submit" value="Delete">
-  </form>
-  <% end %>
+<% if @user != nil %>
+  <% if @blog.userid == @user.id %>
+    <form method="POST" action="/deleteBlog/<%= @blog.id %>">
+      <input type="submit" value="Delete">
+    </form>
+    <form method="GET" action="/updateBlog/<%= @blog.id %>">
+      <input type="submit" value="Update">
+    </form>
+    <% end %>
+<% end %>
 
 </body>

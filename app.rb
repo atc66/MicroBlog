@@ -41,7 +41,11 @@ end
 
 get '/blogs/:id' do
 	@blog = Blog.find(params[:id])
-	@user = User.find(session[:user_id])
+	if session[:user_id]
+		@user = User.find(session[:user_id])
+	else
+		@user = nil
+	end
 	erb :"blogs/blog"
 	end
 
@@ -67,3 +71,4 @@ post '/deleteBlog/:id' do
 	@blog.destroy
 	redirect "/current/#{@user.id}"
 end
+
