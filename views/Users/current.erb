@@ -15,7 +15,7 @@
 
 
 <% @blogs.reverse.each do |b| %>
-    <a href='blogs/<%= b.id %>'><div><%= b.title %></div></a>
+    <a href='/blogs/<%= b.id %>'><div><%= b.title %></div></a>
         <div><%= b.content %></div>
 <% end %>
   <hr>

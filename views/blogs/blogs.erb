@@ -1,6 +1,5 @@
 
 <body>
-<p id='header'>All the blogs:</p>
 <% @blogs.each do |b| %>
     <a href='blogs/<%= b.id %>'><div><%= b.title %></div></a>
 <% end %>
