@@ -19,9 +19,37 @@ input {
 }
 
 button {
-  color: #900;
-  border: 1px solid #900;
+
+}
+
+.btn {
+  color: white;
+  background-color: lightblue;
   font-weight: bold;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  border-color: rgb(57, 135, 201);
+  background-color: blue;
+  border-radius: 10px;
+}
+
+.btn:active {
+  border-color: lightgreen;
+  background-color: lightgreen;
+  border-radius: 20px;
+}
+
+.signUp {
+  color: white;
+  background-color: lightblue;
+  font-weight: bold;
+  border-radius: 25px;
+}
+.signUp:hover {
+  border-color: rgb(57, 135, 201);
+  background-color: blue;
 }
 
 #box1 {
