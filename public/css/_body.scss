@@ -11,17 +11,23 @@ html {
 }
 
 form {
-	margin: 10px 5px;
+	margin: 10px;
 }
 
+input {
+	width: 50%;
+}
+
+button {
+  color: #900;
+  border: 1px solid #900;
+  font-weight: bold;
+}
 
 #box1 {
 	height: 300px;
-	width: 450px;
+	width: 650px;
 	background-color: rgba(128,128,128, 0.5);
 	border: 10px solid rgba(57, 135, 201, 0.5);
+	margin-top: 10px;
 }
-
-// #logout {
-// 	margin-top: 10000px;
-// }

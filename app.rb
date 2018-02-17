@@ -30,17 +30,6 @@ post '/logout' do
 	redirect '/'
 end
 
-get '/current/:id' do
-	@user = User.find(session[:user_id])
- 	@blogs = Blog.where(user_id: session[:user_id])
-	erb :'/Users/current'
-end
-
-get '/current/:id/edit' do
-	@user = User.find(params[:id])
-	erb :'/Users/edit'
-end
-
 get '/blogs' do
 	@blogs = Blog.all
 	erb :"/blogs/blogs"
@@ -69,7 +58,18 @@ post '/new_user' do
 	redirect "/"
 end
 
-post 'update_user/:id/edit' do
+get '/current/:id' do
+	@user = User.find(session[:user_id])
+ 	@blogs = Blog.where(user_id: session[:user_id])
+	erb :'/Users/current'
+end
+
+get '/current/:id/edit' do
+	@user = User.find(params[:id])
+	erb :'/Users/edit'
+end
+
+post '/update_user/:id/edit' do
  	User.update(username: params[:username], password: params[:password])
  	redirect "/"
 end
@@ -101,7 +101,7 @@ end
 
 get '/blogs/update/:id' do
 	@blog = Blog.find(params[:id])
-erb :"blogs/updateBlog"
+	erb :"blogs/updateBlog"
 end
 
 post '/updateBlog/:id' do

@@ -9,11 +9,11 @@
 <% if @user != nil %>
   <% if @blog.user_id == @user.id %>
     <form method="POST" action="/deleteBlog/<%= @blog.id %>">
-      <input type="submit" value="Delete">
+      <button type="submit" value="Delete">Delete</button>
     </form>
 
     <form method="GET" action="/update_Blog/<%= @blog.id %>">
-      <input type="submit" value="Update">
+      <button type="submit" value="Update">Update</button> 
     </form>
 
     <% end %>
