@@ -5,7 +5,6 @@ ul {
 
 .wrapper {
 	width: 100%;
-    list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -19,12 +18,8 @@ ul {
 }
 
 a {
-	display: block;
-	color: #3987c9; //light blue font color
 	font-family: Arial, Helvetica, sans-serif;
-	text-align: center; 
-	padding: 14px 16px;
-	text-decoration: none;
+	text-align: center;
 	text-transform: uppercase;
 }
 
@@ -32,7 +27,6 @@ a {
 	display: block;
     color: #3987c9; //light blue font color
     padding: 14px 16px;
-    text-decoration: none; 
 }
 
 .block:last-child {
@@ -40,12 +34,8 @@ a {
 }
 
 a:hover, a:link, {
-	color: black;
+	color: white;
 	text-decoration: none;
-}
-
-a:active {
-	color: black;
 }
 
 @media all and (max-width: 480px){

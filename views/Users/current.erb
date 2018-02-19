@@ -15,13 +15,10 @@
     <p id='header'>Make a Post</p>
     <form method="POST" action="/createBlog">
       <input type="text" name="title" placeholder="Title">
-      <br>
       <textarea name="content" maxlength="150"></textarea>
-      <br>
-      <button class='btn' type="submit" value="Post">Post</button>
+      <button class='btn' id="post" type="submit" value="Post">Post</button>
     </form>
   </div>
-  <br>
 
   <% @blogs.reverse.each do |b| %>
     <div id='box1'>
@@ -34,17 +31,14 @@
     		</p>
       </a>
   	</div>
-    <br>
   <% end %>
 
-  <hr>
 
   <p id='header'>Logout</p>
   <form action='/logout' method='post'>
   	<button class='btn' type="submit" value="Logout">Logout</button>
   </form>
 
-<hr>
 <p id='header'>Delete</p>
 <form action='/delete_user/current' method='post'>
   <button class='btn' type="submit" value="Delete User">Delete User</button>
