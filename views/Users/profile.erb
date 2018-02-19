@@ -1,0 +1,23 @@
+<body>
+
+<!-- <div id='box1'> -->
+        <p id='header'>
+            <%=@user.username%>
+        </p> 
+<!--  </div> -->
+
+<% @blogs.reverse.each do |b| %>
+    <div id='box1'>
+      <a href='/blogs/<%= b.id %>'>
+        <p id='header'>
+        	<%= b.title %>
+        </p>
+        <p id='content'>
+    			<%= b.content %>
+    		</p>
+      </a>
+  	</div>
+    <br>
+  <% end %>
+
+  <hr>

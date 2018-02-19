@@ -116,3 +116,15 @@ post '/updateBlog/:id' do
 	@blog.update(title: params[:title], content: params[:content], user_id: session[:user_id])
 	redirect "/current/#{session[:user_id]}"
 end
+
+get '/profile/:id' do
+	@user = User.find(params[:id])
+	@blogs = Blog.where(user_id: params[:id])
+
+	erb :'Users/profile'
+end
+
+get '/bloggers' do
+	@bloggers = User.all
+	erb :'Users/bloggers'
+end
