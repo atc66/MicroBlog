@@ -15,11 +15,7 @@ form {
 }
 
 input {
-	width: 50%;
-}
-
-button {
-
+	width: 25%;
 }
 
 .btn {
@@ -33,12 +29,6 @@ button {
   border-color: rgb(57, 135, 201);
   background-color: blue;
   border-radius: 10px;
-}
-
-.btn:active {
-  border-color: lightgreen;
-  background-color: lightgreen;
-  border-radius: 20px;
 }
 
 .signUp {
@@ -57,5 +47,11 @@ button {
 	width: 650px;
 	background-color: rgba(128,128,128, 0.5);
 	border: 10px solid rgba(57, 135, 201, 0.5);
-	margin-top: 10px;
+	margin: 10px auto;
+}
+
+#post{
+  margin-left:37.5%;
+  width: 25%;
+  height: 15%;
 }
