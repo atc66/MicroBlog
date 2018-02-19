@@ -11,17 +11,51 @@ html {
 }
 
 form {
-	margin: 10px 5px;
+	margin: 10px;
 }
 
+input {
+	width: 50%;
+}
+
+button {
+
+}
+
+.btn {
+  color: white;
+  background-color: lightblue;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  border-color: rgb(57, 135, 201);
+  background-color: blue;
+  border-radius: 10px;
+}
+
+.btn:active {
+  border-color: lightgreen;
+  background-color: lightgreen;
+  border-radius: 20px;
+}
+
+.signUp {
+  color: white;
+  background-color: lightblue;
+  font-weight: bold;
+  border-radius: 25px;
+}
+.signUp:hover {
+  border-color: rgb(57, 135, 201);
+  background-color: blue;
+}
 
 #box1 {
 	height: 300px;
-	width: 450px;
+	width: 650px;
 	background-color: rgba(128,128,128, 0.5);
 	border: 10px solid rgba(57, 135, 201, 0.5);
+	margin-top: 10px;
 }
-
-// #logout {
-// 	margin-top: 10000px;
-// }
