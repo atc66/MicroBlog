@@ -25,23 +25,10 @@ post '/login' do
 		redirect '/'
 	end
  end
-post '/logout' do
 
+post '/logout' do
 	redirect '/'
 end
-
-
-get '/current/:id' do
-	 @user = User.find(session[:user_id])
-  @blogs = Blog.where(user_id: session[:user_id])
-	erb :'/Users/current'
-end
-
-get '/current/:id/edit' do
-		@user = User.find(params[:id])
-
-		erb :'users/edit'
-	end
 
 get '/blogs' do
 	@blogs = Blog.all
@@ -59,7 +46,6 @@ get '/blogs/:id' do
 end
 
 get '/edit' do
-
 	erb :'Users/edit'
 end
 
@@ -70,27 +56,34 @@ end
 post '/new_user' do
 	User.create(username: params[:username], password: params[:password])
 	redirect "/"
- end
+end
 
- post 'update_user/:id/edit' do
- 	
+get '/current/:id' do
+	@user = User.find(session[:user_id])
+ 	@blogs = Blog.where(user_id: session[:user_id])
+	erb :'/Users/current'
+end
+
+get '/current/:id/edit' do
+	@user = User.find(params[:id])
+	erb :'/Users/edit'
+end
+
+post '/update_user/:id/edit' do
  	User.update(username: params[:username], password: params[:password])
- 	
  	redirect "/"
- end
+end
 
- post '/delete_user/:id' do
- 	user = User.find(params[:id])
- 
- 	user.destroy
- 	
+post '/delete_user/:id' do
+ 	@user = User.find(session[:user_id])
+ 	@user.destroy
  	redirect "/"
 end
 
 post '/createBlog' do
 	@user = User.find(session[:user_id])
-Blog.create(title: params[:title], content: params[:content], user_id: session[:user_id])
-redirect "/current/#{@user.id}"
+	Blog.create(title: params[:title], content: params[:content], user_id: session[:user_id])
+	redirect "/current/#{@user.id}"
 end
 
 post '/deleteBlog/:id' do
@@ -108,7 +101,7 @@ end
 
 get '/blogs/update/:id' do
 	@blog = Blog.find(params[:id])
-erb :"blogs/updateBlog"
+	erb :"blogs/updateBlog"
 end
 
 post '/updateBlog/:id' do
