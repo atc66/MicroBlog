@@ -1,6 +1,9 @@
+<body>
 <h1>All bloggers</h1>
 
 <% @bloggers.each do |b| %>
  <a href="/profile/<%= b.id %>"><%= b.username %></a>
     <br />
     <% end %> 
+
+</body>

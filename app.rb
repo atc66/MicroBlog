@@ -64,20 +64,21 @@ get '/current/:id' do
 	erb :'/Users/current'
 end
 
-get '/current/:id/edit' do
+get '/current/edit/:id' do
 	@user = User.find(params[:id])
 	erb :'/Users/edit'
 end
 
 post '/update_user/:id/edit' do
- 	User.update(username: params[:username], password: params[:password])
+	@user = User.find(session[:user_id])
+ 	@user.update(username: params[:username], password: params[:password])
  	redirect "/"
 end
 
 
- post '/delete_user/current/:id' do
- 	user = User.find(params[:id])
- 	user.destroy
+ post '/delete_user/current' do
+ 	@user = User.find(session[:user_id])
+ 	@user.destroy
  	redirect "/"
 end
 

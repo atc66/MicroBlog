@@ -1,20 +1,18 @@
 <body>
 
-<p id='header'>Update Account</p>
+	<p id='header'>Update Account</p>
 
-<form action='/update_user/<%= @user.id %>/edit' method='post'>
-	<input type="text" name="username" placeholder='username'>
-	<input type="text" name="password" placeholder='password'>
-	<button class='btn' type="submit" value="Update User">Update User</button>
-</form>
+	<form action='/update_user/<%= @user.id %>/edit' method='post'>
+		<input type="text" name="username" placeholder='username'>
+		<input type="text" name="password" placeholder='password'>
+		<button class='btn' type="submit" value="Update User">Update User</button>
+	</form>
 
-<p id='header'>Logout</p>
-<div id='box1'>
-<form action='/logout' method='post'>
-	<button class='btn' type="submit" value="Logout">Logout</button>
-</form>
-</div>
-
-
-
+	<p id='header'>Logout</p>
+	
+	<div id='box1'>
+		<form action='/logout' method='post'>
+			<button class='btn' type="submit" value="Logout">Logout</button>
+		</form>
+	</div>
 </body>
